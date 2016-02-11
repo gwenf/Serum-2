@@ -1,0 +1,68 @@
+
+.custom-nav {
+  box-sizing: border-box;
+  height: 83px;
+  width: 100%;
+  background: $fushia;
+  border-bottom: 3px solid lightgray;
+  color: white;
+  font-family: $navfont;
+
+  .empty-box {
+    width: 5%;
+    height: 80px;
+  }
+
+  ul {
+    line-height: 80px;
+    position: relative;
+    display: block;
+    // border-bottom: 3px solid lightgray;
+  }
+  li {
+    list-style: none;
+    float: left;
+    width: 200px;
+    text-align: center;
+    font-size: 1.8em;
+    // border-bottom: 3px solid lightgray;
+    border-left: 1px solid lightgray;
+    &:hover {
+      cursor: pointer;
+
+      border-bottom: inherit;
+    }
+    &:last-child {
+      margin-bottom: 10%;
+    }
+  }
+  li:nth-child(6) {
+    border-right: 1px solid lightgray;
+  }
+  li:first-child {
+    border: none;
+  }
+
+  $i: 1;
+  @each $color in $menucolors {
+    .col-#{$i} {
+      background-color: #{$color};
+      $i: $i + 1;
+      @include hovercolor($color);
+    }
+  }
+  @media (max-width: 768px){
+    li {
+      width: 100%;
+      border: none;
+    }
+    li:first-child {
+      display: none;
+    }
+  }
+  @media (min-width: 1250px){
+    li {
+      width: 400px;
+    }
+  }
+}

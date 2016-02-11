@@ -1,0 +1,20 @@
+
+
+.img_head {
+  height: 65px;
+  max-width: 100%;
+  background: url('../images/logoBanner.png') no-repeat;
+  background-size: cover;
+  @media (min-width: 550px) {
+    height: 100px
+  }
+  @media (min-width: 900px){
+    height: 150px;
+  }
+  @media (min-width: 1200px){
+    height: 200px;
+  }
+  @media (min-width: 1400px){
+    height: 250px;
+  }
+}

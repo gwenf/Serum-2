@@ -1,0 +1,40 @@
+@mixin hovercolor($color) {
+  &:hover {
+    background-color: lighten($color, 10%);
+  }
+}
+
+@mixin banner {
+  background-color: lighten($purple, 15%);
+  height: 120px;
+  width: 100%;
+  display: block;
+  text-align: center;
+  p {
+    line-height: 120px;
+  }
+}
+
+
+@mixin bannerImages {
+  height: 65px;
+  max-width: 100%;
+  background-size: cover;
+}
+
+
+@mixin checkpoints{
+  // color: $green;
+  text-align: center;
+  display: block;
+  margin: 3% auto;
+  font-size: 1.8em;
+  $j: 1;
+  @each $color in $menucolors {
+    &.ok-#{$j} {
+      color: #{$color};
+      $j: $j + 1;
+      @include hovercolor(lighten($color,30%));
+    }
+  }
+}

@@ -1,0 +1,398 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.img_head {
+  height: 65px;
+  max-width: 100%;
+  background: url("../images/logoBanner.png") no-repeat;
+  background-size: cover;
+}
+@media (min-width: 550px) {
+  .img_head {
+    height: 100px;
+  }
+}
+@media (min-width: 900px) {
+  .img_head {
+    height: 150px;
+  }
+}
+@media (min-width: 1200px) {
+  .img_head {
+    height: 200px;
+  }
+}
+@media (min-width: 1400px) {
+  .img_head {
+    height: 250px;
+  }
+}
+
+.custom-nav {
+  box-sizing: border-box;
+  height: 83px;
+  width: 100%;
+  background: #A4286A;
+  border-bottom: 3px solid lightgray;
+  color: white;
+  font-family: "Kaushan Script", cursive;
+}
+.custom-nav .empty-box {
+  width: 5%;
+  height: 80px;
+}
+.custom-nav ul {
+  line-height: 80px;
+  position: relative;
+  display: block;
+}
+.custom-nav li {
+  list-style: none;
+  float: left;
+  width: 200px;
+  text-align: center;
+  font-size: 1.8em;
+  border-left: 1px solid lightgray;
+}
+.custom-nav li:hover {
+  cursor: pointer;
+  border-bottom: inherit;
+}
+.custom-nav li:last-child {
+  margin-bottom: 10%;
+}
+.custom-nav li:nth-child(6) {
+  border-right: 1px solid lightgray;
+}
+.custom-nav li:first-child {
+  border: none;
+}
+.custom-nav .col-1 {
+  background-color: #D93F69;
+}
+.custom-nav .col-1:hover {
+  background-color: #e16a8a;
+}
+.custom-nav .col-2 {
+  background-color: #77B227;
+}
+.custom-nav .col-2:hover {
+  background-color: #92d438;
+}
+.custom-nav .col-3 {
+  background-color: #0075B3;
+}
+.custom-nav .col-3:hover {
+  background-color: #0096e6;
+}
+@media (max-width: 768px) {
+  .custom-nav li {
+    width: 100%;
+    border: none;
+  }
+  .custom-nav li:first-child {
+    display: none;
+  }
+}
+@media (min-width: 1250px) {
+  .custom-nav li {
+    width: 400px;
+  }
+}
+
+.hr-blue {
+  height: 5px;
+  width: 100%;
+  background: #0075B3;
+  position: relative;
+  top: 1px;
+}
+@media (min-width: 768px) {
+  .hr-blue {
+    display: none;
+  }
+}
+
+.treat {
+  font-size: 1.8em;
+  color: #5D327A;
+  font-family: sans-serif;
+  font-weight: 200;
+  text-align: center;
+  margin: 5% 0;
+}
+.treat.first {
+  font-size: 2.5em;
+  margin-top: 5%;
+}
+@media (min-width: 768px) {
+  .treat {
+    font-size: 3em;
+    margin: 5px;
+  }
+  .treat.first {
+    font-size: 4.2em;
+  }
+}
+@media (min-width: 1000px) {
+  .treat {
+    font-size: 4em;
+    margin-top: 0;
+  }
+  .treat.first {
+    font-size: 5.5em;
+    margin-top: 2%;
+  }
+}
+@media (min-width: 1200px) {
+  .treat.first {
+    font-size: 5.5em;
+    margin-top: 0;
+  }
+}
+
+.divider {
+  background-color: #8648b0;
+  height: 120px;
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin: 10% 0;
+}
+.divider p {
+  line-height: 120px;
+}
+.divider .middle_divider {
+  position: relative;
+  top: 45%;
+  height: 5px;
+  width: 100%;
+  background: #D93F69;
+}
+
+.first_images img {
+  display: block;
+  width: 70%;
+  margin: 5% auto;
+  border-left: 10px solid #E37A66;
+}
+.first_images img:nth-child(2) {
+  border-color: #5D327A;
+}
+.first_images form {
+  width: 70%;
+  margin: 10% auto;
+}
+
+.hr-flat {
+  height: 1px;
+  width: 100%;
+  background: #D93F69;
+  margin: 5% 0;
+}
+
+.hr-point {
+  height: 1px;
+  width: 100%;
+  background: #0075B3;
+  margin: 5% 0;
+}
+.hr-point::after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 15px 15px 0;
+  border-color: #fff transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  left: 50%;
+}
+.hr-point::before {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 16px 16px 0;
+  border-color: #0075B3 transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  left: 50%;
+}
+
+blockquote {
+  font-size: 2em;
+  padding: 4%;
+  border-left: 5px solid #77B227;
+  background: #d7efb6;
+  margin: 8% 2%;
+}
+blockquote.blockquote-reverse {
+  border-right: 5px solid #F58223;
+  background: #fcd5b5;
+}
+@media (min-width: 768px) {
+  blockquote {
+    width: 70%;
+    margin: 4% auto;
+  }
+}
+
+.company-statement {
+  text-align: center;
+  font-size: 2em;
+  line-height: 2em;
+}
+
+.img_science {
+  display: block;
+  margin: 2% auto;
+  width: 90%;
+  border-right: 7px solid #77B227;
+  border-radius: 10px;
+}
+
+p.check {
+  text-align: center;
+  display: block;
+  margin: 3% auto;
+  font-size: 1.8em;
+  font-family: "Courgette", cursive;
+}
+p.check.ok-1 {
+  color: #D93F69;
+}
+p.check.ok-1:hover {
+  background-color: #fbe9ee;
+}
+p.check.ok-2 {
+  color: #77B227;
+}
+p.check.ok-2:hover {
+  background-color: #d7efb6;
+}
+p.check.ok-3 {
+  color: #0075B3;
+}
+p.check.ok-3:hover {
+  background-color: #80d3ff;
+}
+p.check:first-child {
+  margin-top: 7%;
+}
+p.check:nth-child(3) {
+  margin-bottom: 10%;
+}
+
+.point-two {
+  border: 1px solid #0075B3;
+  width: 95%;
+  margin: auto;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  margin-bottom: 10%;
+}
+
+.bottom_banner {
+  height: 65px;
+  max-width: 100%;
+  background-size: cover;
+  height: 220px;
+  max-width: 100%;
+  background: url("../images/vitaYouthBanner.png") no-repeat;
+  background-size: cover;
+}
+@media (min-width: 550px) {
+  .bottom_banner {
+    height: 450px;
+  }
+}
+@media (min-width: 900px) {
+  .bottom_banner {
+    height: 650px;
+  }
+}
+@media (min-width: 1200px) {
+  .bottom_banner {
+    height: 750px;
+  }
+}
+@media (min-width: 1400px) {
+  .bottom_banner {
+    height: 1000px;
+  }
+}
+
+.footer {
+  background-color: #8648b0;
+  height: 120px;
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+.footer p {
+  line-height: 120px;
+}
+
+.disclaimer, .ingredients {
+  padding: 1%;
+  font-family: sans-serif;
+}

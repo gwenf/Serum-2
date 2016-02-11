@@ -1,0 +1,12 @@
+
+
+.footer {
+  @include banner;
+}
+
+
+.disclaimer, .ingredients {
+  padding: 1%;
+  font-family: sans-serif;
+
+}
