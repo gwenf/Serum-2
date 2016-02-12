@@ -25,8 +25,9 @@ if (env === 'development'){
 console.log(sassStyle);
 
 jsSources = [
-      'components/scripts/jquery-1.12.0.min.js',
-      'components/scripts/script.js'
+      'components/scripts/jquery-2.2.0.min.js',
+      'components/scripts/jquery.sticky.js',
+      'components/scripts/custom.js'
     ];
 sassSources = [
       'components/sass/style.scss',
@@ -98,6 +99,5 @@ gulp.task('jade', function() {
     .pipe(gulp.dest(outputDir))
     .pipe(livereload())
 });
-
 
 gulp.task('default', ['html', 'js', 'compass', 'jade', 'images', 'watch']);

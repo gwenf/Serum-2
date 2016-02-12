@@ -1,13 +1,13 @@
-.hr-blue {
-  height: 5px;
-  width: 100%;
-  background: $blue;
-  position: relative;
-  top: 1px;
-  @media (min-width: 768px) {
-    display: none;
-  }
-}
+// .hr-blue {
+//   height: 5px;
+//   width: 100%;
+//   background: $blue;
+//   position: relative;
+//   top: 1px;
+//   @media (min-width: 768px) {
+//     display: none;
+//   }
+// }
 
 .treat {
   font-size: 1.8em;
@@ -46,31 +46,58 @@
 
 .divider {
   @include banner;
-  margin: 10% 0;
-  .middle_divider {
-    position: relative;
-    top: 45%;
-    height: 5px;
-    width: 100%;
-    background: $pink;
-  }
+  margin: 6% 0;
+}
+.middle_divider {
+  position: relative;
+  top: 45%;
+  height: 5px;
+  width: 100%;
+  background: $pink;
 }
 
 .first_images {
   img {
     display: block;
-    width: 70%;
+    width: 98%;
     margin: 5% auto;
     border-left: 10px solid $cream;
+    @media (min-width: 768px) {
+      width: 60%;
+    }
   }
   img:nth-child(2) {
     border-color: $purple;
   }
-
-  form {
-    width: 70%;
-    margin: 10% auto;
-
+  #willitwork {
+    border: 1px solid $blue;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    width: 90%;
+    margin: 2% auto;
+    p.check {
+      @include checkpoints;
+      font-family: $checkfont;
+      font-size: 1.5em;
+      &:first-child {
+        // margin-top: 7%;
+      }
+    }
+    @media ('min-width: 768px') {
+      font-size: 1.5em;
+      width: 70%;
+      margin: 0 auto;
+    }
+    @media ('min-width: 768px') {
+      font-size: 1.8em;
+      .ok-1 {
+        margin: 2%;
+      }
+      .ok-3 {
+        margin: 2% auto;
+      }
+    }
   }
 }
 
@@ -141,31 +168,74 @@ blockquote {
 // science girl section
 .img_science {
   display: block;
-  margin: 2% auto;
-  width: 90%;
-  border-right: 7px solid $green;
-  border-radius: 10px;
-}
-
-p.check {
-  @include checkpoints;
-  font-family: $checkfont;
-  &:first-child {
-    margin-top: 7%;
-  }
-  &:nth-child(3) {
-    margin-bottom: 10%;
+  margin: 0 auto 7%;
+  width: 98%;
+  border-right: 10px solid $green;
+  border-radius: 30px;
+  @media (min-width: 768px) {
+    width: 60%;
+    margin-bottom: 2%;
   }
 }
 
-.point-two {
+#why {
   border: 1px solid $blue;
-  width: 95%;
-  margin: auto;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
-  margin-bottom: 10%;
+
+  position: relative;
+  margin-bottom: 50px;
+
+  @media ('min-width: 768px') {
+    font-size: 1.5em;
+    width: 75%;
+    margin: 0 auto;
+  }
+  @media ('min-width: 1200px') {
+    font-size: 1.8em;
+    .ok-1 {
+      // margin: 2%;
+    }
+    .ok-3 {
+      // margin: 2% auto;
+    }
+  }
+}
+
+#why p.check {
+  @include checkpoints;
+  padding: 20px;
+  font-family: $checkfont;
+  font-size: 1.5em;
+  //these are the icons in that section
+  &:first-child img {
+    display: block;
+    margin: auto;
+    width: 85%;
+    padding-bottom: 4%;
+  }
+  &:nth-child(2) img {
+    display: block;
+    margin: auto;
+    width: 35%;
+  }
+  &:nth-child(3) img {
+    display: block;
+    margin: auto;
+    width: 60%;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    img {
+      display: block;
+      margin: auto;
+      font-size: 2.2em;
+    }
+  }
+  @media (max-width: 1000px) {
+    // font-size: 1.1em;
+  }
 }
 
 

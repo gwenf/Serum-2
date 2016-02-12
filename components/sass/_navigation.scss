@@ -5,7 +5,13 @@
   width: 100%;
   background: $fushia;
   border-bottom: 3px solid lightgray;
-  color: white;
+  a {
+    color: white;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
   font-family: $navfont;
 
   .empty-box {

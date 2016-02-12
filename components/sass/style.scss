@@ -1,5 +1,5 @@
 @import "compass";
-@import "compass/reset";
+// @import "compass/reset";
 
 @import "normalize";
 @import "mixins";
@@ -9,4 +9,7 @@
 @import "header";
 @import "navigation";
 @import "body";
+@import "form";
 @import "footer";
+
+@import "flower";

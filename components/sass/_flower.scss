@@ -1,0 +1,177 @@
+@import "compass/css3";
+
+$w: 15em;
+$h: $w;
+$body-col: #bbb;
+$core-col: radial-gradient(ellipse at center, rgba(247,189,0,1) 0%,rgba(247,189,0,1) 52%,rgba(247,152,0,1) 67%,rgba(247,152,0,1) 100%);
+$petal-col: linear-gradient(135deg, rgba(231,0,252,1) 0%,rgba(255,91,255,1) 75%,rgba(255,193,255,1) 100%);
+$petal-border-col: rgba(255,255,255,0.25);
+$petal-bt: 2px;
+
+$cw: $w / 3;
+$ch: $cw;
+
+$r: $cw / 2;
+
+//calculate the diagnal
+$old-d: $w / 3;
+$DB: $old-d / 2;
+$s: sqrt(2) *  $DB;
+$CB: $s / 2 * (sqrt(2) - 1);
+$d: $old-d + $CB;
+$off: $old-d + $CB / 2;
+
+$sf: $d / $old-d;
+
+$d: $old-d;
+$off: $old-d;
+$off-ani: $off + $CB / 2;
+
+// consider equilateral triangle
+$alpha: 30deg;
+$ph: $d / sqrt(4/3 + 4/sqrt(3)*tan($alpha) + 1 + pow(tan($alpha), 2));
+$pw: 2 / sqrt(3) * $ph;
+
+// number of petals
+$np: 12;
+$angle-incr: 360deg / $np;
+
+$anim-time: 2s;
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  position: relative;
+  width: $w;
+  height: $h;
+  border-radius: 0%;
+  margin: 0 auto;
+}
+
+.core {
+  position: absolute;
+  top: ($h - $ch) / 2;
+  left: ($w - $cw) / 2;
+  width: $cw;
+  height: $ch;
+  background: $core-col;
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+  transition: opacity 0.25s ease-in-out;
+  opacity: 1;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.petal-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $w;
+  height: $h;
+}
+
+@mixin transformation($tY, $tX, $r, $sk, $sc) {
+  transform:
+    translateY($tY)
+    translateX($tX)
+    rotate($r)
+    skewX($sk)
+    scale($sc);
+}
+
+.petal {
+  position: absolute;
+  width: $pw;
+  height: $ph;
+  background: $petal-col;
+  border-radius: 0 50% 50% 50%;
+  box-shadow: -2px -2px 20px rgba(255,255,255,0.5) inset,
+    0px 0px 2px rgba(0,0,0,0.5);
+
+  box-sizing: border-box;
+  cursor: pointer;
+  overflow: hidden;
+  transition: opacity 0.25s ease-in-out;
+  opacity: 1;
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  /*&:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $petal-col;
+    box-shadow: -2px -2px 20px rgba(255,255,255,0.5) inset;
+
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+
+
+    &:hover {
+      opacity: 0.0;
+    }
+  }*/
+
+
+
+  @for $i from 1 through $np {
+    &:nth-child(#{$i}) {
+      animation: ani#{$i} $anim-time ease-in-out infinite;
+      animation-delay: ($i - 1) * $anim-time / $np;
+      @include transformation(
+        ($h - $ph) / 2 + $off * sin(($i - 1) * $angle-incr),
+        ($w - $pw) / 2 + $off * cos(($i - 1) * $angle-incr),
+        -$alpha + ($i - 1) * $angle-incr,
+        $alpha,
+        1
+      );
+    }
+  }
+}
+
+
+@for $i from 1 through $np {
+  @keyframes ani#{$i} {
+    0% {
+      @include transformation(
+        ($h - $ph) / 2 + $off * sin(($i - 1) * $angle-incr),
+        ($w - $pw) / 2 + $off * cos(($i - 1) * $angle-incr),
+        -$alpha + ($i - 1) * $angle-incr,
+        $alpha,
+        1
+      );
+    }
+
+    50% {
+      @include transformation(
+        ($h - $ph) / 2 + $off-ani * sin(($i - 1) * $angle-incr),
+        ($w - $pw) / 2 + $off-ani * cos(($i - 1) * $angle-incr),
+        -$alpha + ($i - 1) * $angle-incr,
+        $alpha,
+        $sf
+      );
+    }
+
+    100% {
+      @include transformation(
+        ($h - $ph) / 2 + $off * sin(($i - 1) * $angle-incr),
+        ($w - $pw) / 2 + $off * cos(($i - 1) * $angle-incr),
+        -$alpha + ($i - 1) * $angle-incr,
+        $alpha,
+        1
+      );
+    }
+  }
+}
